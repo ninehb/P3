@@ -28,19 +28,19 @@ def parse_args():
   """
   parser = argparse.ArgumentParser(description='Train a Fast R-CNN network')
   parser.add_argument('--cfg', dest='cfg_file',
-                      help='optional config file',
+                      help='optional config file, C:\\SVN\\faster_rcnn\\TensorFlow\\windows\\experiments\\cfgs\\vgg16.yml',
                       default=None, type=str)
   parser.add_argument('--weight', dest='weight',
-                      help='initialize with pretrained model weights',
+                      help='initialize with pretrained model weights, C:\\SVN\\faster_rcnn\\TensorFlow\\windows\\data\\imagenet_weights\\vgg_16.ckpt',
                       type=str)
   parser.add_argument('--imdb', dest='imdb_name',
-                      help='dataset to train on',
+                      help='dataset to train on, wbc_train',
                       default='voc_2007_trainval', type=str)
   parser.add_argument('--imdbval', dest='imdbval_name',
-                      help='dataset to validate on',
+                      help='dataset to validate on, wbc_test',
                       default='voc_2007_test', type=str)
   parser.add_argument('--iters', dest='max_iters',
-                      help='number of iterations to train',
+                      help='number of iterations to train, 110000',
                       default=70000, type=int)
   parser.add_argument('--tag', dest='tag',
                       help='tag of the model',
@@ -49,7 +49,7 @@ def parse_args():
                       help='vgg16, res50, res101, res152, mobile',
                       default='res50', type=str)
   parser.add_argument('--set', dest='set_cfgs',
-                      help='set config keys', default=None,
+                      help='set config keys, ANCHOR_SCALES [8,16,32] ANCHOR_RATIOS [0.5,1,2] TRAIN.STEPSIZE [80000]', default=None,
                       nargs=argparse.REMAINDER)
 
   if len(sys.argv) == 1:
