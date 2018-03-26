@@ -26,12 +26,12 @@ def parse_args():
   """
   parser = argparse.ArgumentParser(description='Test a Fast R-CNN network')
   parser.add_argument('--cfg', dest='cfg_file',
-            help='optional config file', default=None, type=str)
+            help='optional config file, C:\\SVN\\faster_rcnn\\TensorFlow\\windows\\experiments\\cfgs\\vgg16.yml', default=None, type=str)
   parser.add_argument('--model', dest='model',
-            help='model to test',
+            help='model to test, C:\\SVN\\faster_rcnn\\TensorFlow\\windows\\output\\vgg16\\wbc_train_05192017\\default\\vgg16_faster_rcnn_iter_70000.ckpt',
             default=None, type=str)
   parser.add_argument('--imdb', dest='imdb_name',
-            help='dataset to test',
+            help='dataset to test, wbc_test',
             default='voc_2007_test', type=str)
   parser.add_argument('--comp', dest='comp_mode', help='competition mode',
             action='store_true')
@@ -45,7 +45,7 @@ def parse_args():
                       help='vgg16, res50, res101, res152, mobile',
                       default='res50', type=str)
   parser.add_argument('--set', dest='set_cfgs',
-                        help='set config keys', default=None,
+                        help='set config keys, ANCHOR_SCALES [8,16,32] ANCHOR_RATIOS [0.5,1,2]', default=None,
                         nargs=argparse.REMAINDER)
 
   if len(sys.argv) == 1:
