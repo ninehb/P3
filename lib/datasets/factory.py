@@ -16,6 +16,12 @@ from datasets.coco import coco
 
 import numpy as np
 
+from datasets.wbc import wbc
+wbc_devkit_path = '\\SVN\\faster_rcnn\\TensorFlow\\windows\\data\\WBC_devkit'
+for split in ['train', 'test']:
+    name = '{}_{}'.format('wbc', split)
+    __sets[name] = (lambda split=split: wbc(split, wbc_devkit_path))
+
 # Set up voc_<year>_<split> 
 for year in ['2007', '2012']:
   for split in ['train', 'val', 'trainval', 'test']:
